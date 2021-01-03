@@ -2,21 +2,25 @@ import sys
 import os
 import re
 if '--mem' in sys.argv:
-  for line in os.popen('cat /proc/meminfo').read().split('\n'):
-    if 'MemFree' in line:
-      line = line.strip()
-      # デフォルトではKB表現だから、メガバイトで表現する
-      mem  = re.split(r'\s{1,}', line)[-2]
-      mem  = 'Mem=%d MB'%(int(mem)//1000)
-      print( mem )
-      break
+  for line in os.popen('free').read().split('\n'):
+      if 'Mem:' in line:
+          line = line.strip()
+          mem2  = re.split(r'\s{1,}', line)[2]
+      if 'Mem:' in line:
+          line = line.strip()
+          # デフォルトではKB表現だから、メガバイトで表現する
+          mem  = re.split(r'\s{1,}', line)[1]
+          mem3  = str((int(mem) - int(mem2)) // 1000) + 'MB'
+          per = str(round(int(mem2) / int(mem), 1)*100) + '%'
+          print(mem3 + ' ' + per)
+          break
 
 if '--vmstat' in sys.argv:
   buff = os.popen('vmstat').read().split('\n')
   keys = re.split(r'\s{1,}', buff[1])
   vals = re.split(r'\s{1,}', buff[2])
   obj  = dict( zip(keys, vals) )
-  ucpu = '💻 ={0:03d}%'.format( int(obj['us']) )
+  ucpu = 'CPU={0:03d}%'.format( int(obj['us']) )
   print( ucpu )
 
 if '--disk' in sys.argv:
@@ -33,7 +37,6 @@ if '--disk' in sys.argv:
     except KeyError:
       use = 'NaN'
 
-    
   try:
     free = obj['Avail']
   except KeyError:
