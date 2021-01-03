@@ -27,17 +27,6 @@ Ubuntu Linux, Debian Linuxでは以下のようにインストールしてくだ
 $ sudo apt install python3
 ```
 
-curlもインストールされている必要があります
-```console
-$ which curl
-/usr/bin/curl
-```
-
-Ubuntu Linux, Debian Linuxでは以下のようにインストールしてください
-```console
-$ sudo apt install curl
-```
-
 ## Install 
 任意ディレクトリにクローンできます。
 ```console
