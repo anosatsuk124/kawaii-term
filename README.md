@@ -41,7 +41,7 @@ $ sudo apt install curl
 ## Install 
 任意ディレクトリにクローンできます。
 ```console
-$ git clone https://github.com/GINK03/kawaii-term
+$ https://github.com/anosatsuk124/kawaii-term
 ```
 template.bashrcを~/.bashrcに追加します（アップデート時は計算時間が無駄にならないように適切に、重複等を消すなどして、軽くしてください）
 ```
