@@ -3,7 +3,7 @@ kawaii-termは主にエンジニアに対して適切に精神的な癒しを与
 
 この世界が可愛ければ戦争は無くなるのに  
 
-* めちゃくちゃ変更しました。 *
+**めちゃくちゃ変更しました。**
 
 ## 機能一覧
 - 顔文字の表示
@@ -41,7 +41,7 @@ $ sudo apt install curl
 ## Install 
 任意ディレクトリにクローンできます。
 ```console
-$ git clone https://github.com/GINK03/kawaii-term
+$ https://github.com/anosatsuk124/kawaii-term
 ```
 template.bashrcを~/.bashrcに追加します（アップデート時は計算時間が無駄にならないように適切に、重複等を消すなどして、軽くしてください）
 ```
